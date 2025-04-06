@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Git과 SVN의 차이점</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f9fbfc;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .comparison-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background-color: #2c3e50;
+            color: #ffffff;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e0e6ed;
+        }
+
+        .comparison-table tbody tr:nth-child(odd) {
+            background-color: #ecf4fc;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #d6eaf8;
+        }
+
+        h2 {
+            color: #111;
+            font-weight: 800;
+            font-size: 24px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #111;
+            font-size: 20px;
+            margin: 40px auto 10px auto;
+            max-width: 800px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Git과 SVN의 차이점</h1>
+
+    <div class="description">
+        Git과 SVN은 버전 관리 시스템으로 사용되고 있음.  
+        여러 명이 동시에 개발 작업을 할 때 코드 변경 내역을 효과적으로 관리하고 있음.  
+        두 시스템은 구조, 속도, 유연성 등 다양한 측면에서 차이를 보이고 있음.
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>비교 항목</th>
+                <th>Git</th>
+                <th>SVN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>저장소 구조</td>
+                <td>분산형 저장소를 사용하고 있음</td>
+                <td>중앙 집중형 저장소를 사용하고 있음</td>
+            </tr>
+            <tr>
+                <td>오프라인 작업</td>
+                <td>오프라인에서도 대부분의 작업이 가능함</td>
+                <td>서버 연결이 없으면 작업이 제한되고 있음</td>
+            </tr>
+            <tr>
+                <td>속도</td>
+                <td>로컬에서 처리되어 빠르게 동작하고 있음</td>
+                <td>서버 기반 작업으로 속도가 느릴 수 있음</td>
+            </tr>
+            <tr>
+                <td>브랜치 관리</td>
+                <td>브랜치 생성 및 병합이 가볍고 빠르게 이뤄지고 있음</td>
+                <td>브랜치 생성이 무겁고 병합이 복잡하게 이뤄지고 있음</td>
+            </tr>
+            <tr>
+                <td>보안 및 무결성</td>
+                <td>SHA-1 해시를 통해 데이터 무결성을 검증하고 있음</td>
+                <td>상대적으로 단순한 방식으로 처리하고 있음</td>
+            </tr>
+            <tr>
+                <td>사용 환경</td>
+                <td>오픈소스 및 현대 개발 환경에서 활발히 사용되고 있음</td>
+                <td>레거시 시스템에서 여전히 사용되고 있음</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>상세 비교 설명</h2>
+
+    <div class="section-title">1. 저장소 구조</div>
+    <div class="description">
+        Git은 모든 개발자에게 전체 저장소가 복사되고 있음.  
+        개발자는 로컬에서 독립적으로 작업하고 있음.  
+        반면 SVN은 중앙 서버 한 곳에 저장소가 존재하고 있음.  
+        모든 작업은 중앙 서버와 통신하며 이뤄지고 있음.
+    </div>
+
+    <div class="section-title">2. 오프라인 작업 가능 여부</div>
+    <div class="description">
+        Git은 로컬에 모든 이력을 저장하고 있기 때문에, 인터넷 연결 없이도 커밋, 브랜치 생성 등이 가능하고 있음.  
+        SVN은 서버에 의존하기 때문에 인터넷이 없으면 대부분의 작업이 불가능함.
+    </div>
+
+    <div class="section-title">3. 브랜치와 병합</div>
+    <div class="description">
+        Git은 브랜치가 가볍게 생성되고 빠르게 병합되고 있음.  
+        실험적인 기능 개발이나 팀 협업에 적합한 구조를 갖추고 있음.  
+        SVN은 브랜치가 디렉터리 형태로 생성되며, 병합 작업도 복잡하고 느림.
+    </div>
+
+    <div class="section-title">4. 사용 환경 및 사례</div>
+    <div class="description">
+        Git은 GitHub, GitLab 등의 플랫폼을 통해 전 세계에서 광범위하게 사용되고 있음.  
+        특히 오픈소스 프로젝트 및 스타트업, IT기업 등에서 주로 활용되고 있음.  
+        SVN은 오래된 프로젝트나 내부 시스템 위주의 환경에서 여전히 사용되고 있음.
+    </div>
+
+    <footer>
+        © 2025 Git vs SVN 비교 문서 | 작성자: 깃잘알 👨‍💻
+    </footer>
+</body>
+</html>
